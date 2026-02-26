@@ -6,27 +6,22 @@ import confetti from 'canvas-confetti';
 import { 
   AiFillThunderbolt, 
   AiFillCode, 
-  AiFillFileText,
-  AiFillGithub,
-  AiFillHeart,
-  AiFillStar,
-  AiFillTrophy,
-  AiFillDashboard,
-  AiFillClockCircle,
+  AiFillFire,
   AiFillCheckCircle,
   AiFillCloseCircle,
+  AiFillClockCircle,
+  AiFillTrophy,
+  AiFillStar,
   AiFillExperiment,
   AiFillDatabase,
   AiFillApi,
   AiFillRobot,
-  AiFillSkull,
   AiFillCrown,
   AiFillGold,
   AiFillBulb,
   AiFillBook,
-  AiFillMusic,
   AiFillMessage,
-  AiFillFire
+  AiOutlineAudio
 } from 'react-icons/ai';
 
 // Importar subcomponentes
@@ -39,7 +34,7 @@ import Leyenda from './Leyenda';
 import Resultado from './Resultado';
 
 function PruebaVelocidad() {
- 
+    // ========== 1. ESTADOS (useState) ==========
     const [pasajes, setPasajes] = useState(null);
     const [pasajeActual, setPasajeActual] = useState('');
     const [entradaUsuario, setEntradaUsuario] = useState('');
@@ -62,94 +57,21 @@ function PruebaVelocidad() {
         return guardado ? JSON.parse(guardado) : { ppm: 0, fecha: null };
     });
 
-    // Referencias
+    // ========== 2. REFERENCIAS (useRef) ==========
     const inputRef = useRef(null);
     const tiempoInicioRef = useRef(null);
     const temporizadorRef = useRef(null);
-    const containerRef = useRef(null); // Referencia al contenedor principal
+    const containerRef = useRef(null);
 
-    // SOLUCION PARA EL SCROLL
-    useEffect(() => {
-        // Prevenir scroll automatico cuando el input recibe foco
-        const prevenirScroll = (e) => {
-            if (document.activeElement === inputRef.current) {
-                // Guardar posición actual
-                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-                const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
-                
-                // Restaurar posición después de que el navegador intente hacer scroll
-                window.requestAnimationFrame(() => {
-                    window.scrollTo(scrollLeft, scrollTop);
-                });
-            }
-        };
-
-        // Event listeners para prevenir scroll
-        window.addEventListener('scroll', prevenirScroll, { passive: false });
-        
-        return () => {
-            window.removeEventListener('scroll', prevenirScroll);
-        };
-    }, []);
-
-    // Enfocar input y mantener scroll
+    // ========== 3. FUNCIONES (PRIMERO LAS FUNCIONES) ==========
+    
     const enfocarInput = () => {
         if (inputRef.current && !juegoTerminado) {
             const scrollPos = window.pageYOffset;
-            inputRef.current.focus({ preventScroll: true }); // preventScroll es clave
+            inputRef.current.focus({ preventScroll: true });
             window.scrollTo(0, scrollPos);
         }
     };
-
-    // Efecto para enfocar al inicio
-    useEffect(() => {
-        enfocarInput();
-    }, []);
-
-    // Efecto para mantener scroll al escribir
-    useEffect(() => {
-        if (juegoActivo) {
-            const scrollPos = window.pageYOffset;
-            window.scrollTo(0, scrollPos);
-        }
-    }, [entradaUsuario, juegoActivo]);
-
-    
-    useEffect(() => {
-        console.log("Cargando pasajes...");
-        Axios.get('/data/pasajes.json')
-            .then((response) => {
-                console.log("Pasajes recibidos:", response.data);
-                setPasajes(response.data);
-                const pasajesFacil = response.data.pasajes.facil;
-                if (pasajesFacil && pasajesFacil.length > 0) {
-                    const indice = Math.floor(Math.random() * pasajesFacil.length);
-                    setPasajeActual(pasajesFacil[indice].texto);
-                }
-            })
-            .catch((error) => console.log("Error cargando pasajes:", error));
-    }, []);
-
-    useEffect(() => {
-        if (juegoActivo && !juegoTerminado) {
-            temporizadorRef.current = setInterval(() => {
-                setTiempoTranscurrido(prev => prev + 1);
-            }, 1000);
-        }
-        return () => clearInterval(temporizadorRef.current);
-    }, [juegoActivo, juegoTerminado]);
-
-    useEffect(() => {
-        if (tiempoInicioRef.current && juegoActivo) {
-            calcularEstadisticas();
-        }
-    }, [entradaUsuario, juegoActivo]);
-
-    useEffect(() => {
-        if (juegoActivo && entradaUsuario.length >= pasajeActual.length) {
-            terminarPrueba();
-        }
-    }, [entradaUsuario, juegoActivo, pasajeActual]);
 
     const calcularEstadisticas = () => {
         const tiempoMinutos = (Date.now() - tiempoInicioRef.current) / 60000;
@@ -235,8 +157,6 @@ function PruebaVelocidad() {
 
     const manejarInput = (e) => {
         const valor = e.target.value;
-        
-        // Prevenir scroll al escribir
         const scrollPos = window.pageYOffset;
         
         if (!juegoActivo && !juegoTerminado && valor.length > 0) {
@@ -245,7 +165,6 @@ function PruebaVelocidad() {
         
         setEntradaUsuario(valor);
         
-        // Restaurar scroll inmediatamente
         window.requestAnimationFrame(() => {
             window.scrollTo(0, scrollPos);
         });
@@ -287,6 +206,83 @@ function PruebaVelocidad() {
         }
     };
 
+    // ========== 4. useEffect (DESPUÉS DE LAS FUNCIONES) ==========
+    
+    // SOLUCION PARA EL SCROLL
+    useEffect(() => {
+        const prevenirScroll = (e) => {
+            if (document.activeElement === inputRef.current) {
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+                
+                window.requestAnimationFrame(() => {
+                    window.scrollTo(scrollLeft, scrollTop);
+                });
+            }
+        };
+
+        window.addEventListener('scroll', prevenirScroll, { passive: false });
+        
+        return () => {
+            window.removeEventListener('scroll', prevenirScroll);
+        };
+    }, []);
+
+    // Efecto para enfocar al inicio
+    useEffect(() => {
+        enfocarInput();
+    }, [enfocarInput]);
+
+    // Efecto para mantener scroll al escribir
+    useEffect(() => {
+        if (juegoActivo) {
+            const scrollPos = window.pageYOffset;
+            window.scrollTo(0, scrollPos);
+        }
+    }, [entradaUsuario, juegoActivo]);
+
+    // Efecto para cargar pasajes
+    useEffect(() => {
+        console.log("Cargando pasajes...");
+        Axios.get('/data/pasajes.json')
+            .then((response) => {
+                console.log("Pasajes recibidos:", response.data);
+                setPasajes(response.data);
+                const pasajesFacil = response.data.pasajes.facil;
+                if (pasajesFacil && pasajesFacil.length > 0) {
+                    const indice = Math.floor(Math.random() * pasajesFacil.length);
+                    setPasajeActual(pasajesFacil[indice].texto);
+                }
+            })
+            .catch((error) => console.log("Error cargando pasajes:", error));
+    }, []);
+
+    // Efecto del temporizador
+    useEffect(() => {
+        if (juegoActivo && !juegoTerminado) {
+            temporizadorRef.current = setInterval(() => {
+                setTiempoTranscurrido(prev => prev + 1);
+            }, 1000);
+        }
+        return () => clearInterval(temporizadorRef.current);
+    }, [juegoActivo, juegoTerminado]);
+
+    // Efecto para calcular estadísticas
+    useEffect(() => {
+        if (tiempoInicioRef.current && juegoActivo) {
+            calcularEstadisticas();
+        }
+    }, [entradaUsuario, juegoActivo, calcularEstadisticas]);
+
+    // Efecto para verificar si terminó
+    useEffect(() => {
+        if (juegoActivo && entradaUsuario.length >= pasajeActual.length) {
+            terminarPrueba();
+        }
+    }, [entradaUsuario, juegoActivo, pasajeActual, terminarPrueba]);
+
+    // ========== 5. RENDERIZADO CONDICIONAL ==========
+    
     if (!pasajes) {
         return (
             <div style={styles.cargandoContainer}>
@@ -301,16 +297,16 @@ function PruebaVelocidad() {
         );
     }
 
+    // ========== 6. JSX (RETURN) ==========
+    
     return (
         <div ref={containerRef} style={styles.container}>
-            {/* Input oculto - con preventScroll */}
             <input
                 ref={inputRef}
                 type="text"
                 value={entradaUsuario}
                 onChange={manejarInput}
                 onFocus={(e) => {
-                    // Prevenir scroll al recibir foco
                     const scrollPos = window.pageYOffset;
                     window.requestAnimationFrame(() => {
                         window.scrollTo(0, scrollPos);
@@ -321,7 +317,6 @@ function PruebaVelocidad() {
                 disabled={juegoTerminado}
             />
 
-            {/* Header Gamer con iconos Ai */}
             <div style={styles.header}>
                 <div style={styles.headerContent}>
                     <AiFillThunderbolt size={50} color="#9147ff" style={styles.headerIcon} />
@@ -339,7 +334,6 @@ function PruebaVelocidad() {
                 </div>
             </div>
 
-            {/* Selectores */}
             <SelectorDificultad 
                 dificultad={dificultad} 
                 setDificultad={setDificultad} 
@@ -363,7 +357,6 @@ function PruebaVelocidad() {
                 mejor={mejorPuntaje.ppm}
             />
 
-            {/* Área de escritura - al hacer clic, enfoca sin scroll */}
             <MostrarPasaje 
                 texto={pasajeActual}
                 entradaUsuario={entradaUsuario}
@@ -400,6 +393,8 @@ function PruebaVelocidad() {
     );
 }
 
+// ========== 7. ESTILOS (fuera del componente) ==========
+
 const styles = {
     container: {
         minHeight: '100vh',
@@ -412,12 +407,12 @@ const styles = {
     },
     hiddenInput: {
         opacity: 0,
-        position: 'fixed', // Cambiado de absolute a fixed
-        top: '-100px', // Muy arriba para que no afecte scroll
+        position: 'fixed',
+        top: '-100px',
         left: 0,
         height: 0,
         width: 0,
-        pointerEvents: 'none', // No interactúa visualmente
+        pointerEvents: 'none',
     },
     header: {
         textAlign: 'center',
