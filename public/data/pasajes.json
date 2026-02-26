@@ -1,0 +1,468 @@
+{
+  "pasajes": {
+    "facil": [
+      {
+        "id": 1,
+        "texto": "El rápido zorro marrón salta sobre el perro perezoso. Esta frase contiene todas las letras del abecedario.",
+        "categoria": "general",
+        "descripcion": "Pangrama clásico en español"
+      },
+      {
+        "id": 2,
+        "texto": "La casa es grande y tiene ventanas azules. El jardín está lleno de flores de colores.",
+        "categoria": "general",
+        "descripcion": "Descripción simple"
+      },
+      {
+        "id": 3,
+        "texto": "Hoy hace un día soleado y perfecto para salir a pasear por el parque con amigos.",
+        "categoria": "general",
+        "descripcion": "Actividades diarias"
+      },
+      
+      {
+        "id": 4,
+        "texto": "console.log('Hola Mundo');",
+        "categoria": "codigo",
+        "descripcion": "Hola Mundo en JavaScript"
+      },
+      {
+        "id": 5,
+        "texto": "print('Hola Mundo')",
+        "categoria": "codigo",
+        "descripcion": "Hola Mundo en Python"
+      },
+      {
+        "id": 6,
+        "texto": "System.out.println('Hola Mundo');",
+        "categoria": "codigo",
+        "descripcion": "Hola Mundo en Java"
+      },
+      {
+        "id": 7,
+        "texto": "echo 'Hola Mundo';",
+        "categoria": "codigo",
+        "descripcion": "Hola Mundo en PHP"
+      },
+      {
+        "id": 8,
+        "texto": "let nombre = 'Ana';",
+        "categoria": "codigo",
+        "descripcion": "Declaración de variable"
+      },
+      {
+        "id": 9,
+        "texto": "const PI = 3.1416;",
+        "categoria": "codigo",
+        "descripcion": "Constante en JavaScript"
+      },
+      {
+        "id": 10,
+        "texto": "if (edad >= 18) { console.log('Mayor de edad'); }",
+        "categoria": "codigo",
+        "descripcion": "Estructura condicional"
+      },
+      {
+        "id": 11,
+        "texto": "for (let i = 0; i < 5; i++) { console.log(i); }",
+        "categoria": "codigo",
+        "descripcion": "Bucle for básico"
+      },
+      
+      {
+        "id": 12,
+        "texto": "Ser o no ser, esa es la cuestión. - William Shakespeare",
+        "categoria": "citas",
+        "descripcion": "Hamlet"
+      },
+      {
+        "id": 13,
+        "texto": "Pienso, luego existo. - René Descartes",
+        "categoria": "citas",
+        "descripcion": "Filosofía"
+      },
+      {
+        "id": 14,
+        "texto": "La vida es lo que pasa mientras estás ocupado haciendo otros planes. - John Lennon",
+        "categoria": "citas",
+        "descripcion": "Reflexión"
+      },
+      
+      {
+        "id": 15,
+        "texto": "El agua hierve a 100 grados Celsius al nivel del mar.",
+        "categoria": "ciencia",
+        "descripcion": "Punto de ebullición"
+      },
+      {
+        "id": 16,
+        "texto": "La Tierra gira alrededor del Sol en aproximadamente 365 días.",
+        "categoria": "ciencia",
+        "descripcion": "Movimiento de traslación"
+      },
+      
+      {
+        "id": 17,
+        "texto": "Internet es una red global de computadoras interconectadas.",
+        "categoria": "tecnologia",
+        "descripcion": "Definición básica"
+      },
+      {
+        "id": 18,
+        "texto": "Un byte está compuesto por 8 bits y puede representar 256 valores diferentes.",
+        "categoria": "tecnologia",
+        "descripcion": "Unidades de información"
+      },
+      
+      {
+        "id": 19,
+        "texto": "El Amazonas es el río más caudaloso del mundo y atraviesa Sudamérica.",
+        "categoria": "naturaleza",
+        "descripcion": "Ríos"
+      },
+      {
+        "id": 20,
+        "texto": "Las mariposas monarca migran miles de kilómetros cada año desde Canadá hasta México.",
+        "categoria": "naturaleza",
+        "descripcion": "Migración animal"
+      },
+      
+      {
+        "id": 21,
+        "texto": "Imagine there's no heaven, it's easy if you try. - John Lennon",
+        "categoria": "canciones",
+        "descripcion": "Imagine"
+      },
+      {
+        "id": 22,
+        "texto": "Despacito, quiero respirar tu cuello despacito. - Luis Fonsi",
+        "categoria": "canciones",
+        "descripcion": "Despacito"
+      }
+    ],
+    
+    "medio": [
+      {
+        "id": 23,
+        "texto": "Las montañas se alzaban majestuosas contra el cielo mientras el sol se ocultaba en el horizonte, pintando el paisaje de tonos dorados y rojizos.",
+        "categoria": "general",
+        "descripcion": "Descripción poética"
+      },
+      {
+        "id": 24,
+        "texto": "La lluvia caía suavemente sobre los techos de las casas mientras el viento movía las hojas de los árboles en una danza hipnótica.",
+        "categoria": "general",
+        "descripcion": "Escena de lluvia"
+      },
+      
+      {
+        "id": 25,
+        "texto": "const sumar = (a, b) => { return a + b; };",
+        "categoria": "codigo",
+        "descripcion": "Función flecha"
+      },
+      {
+        "id": 26,
+        "texto": "const numeros = [1, 2, 3, 4, 5]; const dobles = numeros.map(n => n * 2);",
+        "categoria": "codigo",
+        "descripcion": "Método map"
+      },
+      {
+        "id": 27,
+        "texto": "function saludar(nombre) { return `Hola ${nombre}`; }",
+        "categoria": "codigo",
+        "descripcion": "Template string"
+      },
+      {
+        "id": 28,
+        "texto": "const filtrar = productos.filter(p => p.precio < 100);",
+        "categoria": "codigo",
+        "descripcion": "Filtrado de arrays"
+      },
+      {
+        "id": 29,
+        "texto": "const total = compras.reduce((acc, item) => acc + item.precio, 0);",
+        "categoria": "codigo",
+        "descripcion": "Reduce para sumar"
+      },
+      {
+        "id": 30,
+        "texto": "try { JSON.parse(datosInvalidos); } catch (e) { console.log('Error'); }",
+        "categoria": "codigo",
+        "descripcion": "Manejo de errores"
+      },
+      
+      {
+        "id": 31,
+        "texto": "const [contador, setContador] = useState(0);",
+        "categoria": "react",
+        "descripcion": "Hook useState básico"
+      },
+      {
+        "id": 32,
+        "texto": "useEffect(() => { document.title = `Has hecho clic ${count} veces`; }, [count]);",
+        "categoria": "react",
+        "descripcion": "Hook useEffect"
+      },
+      {
+        "id": 33,
+        "texto": "const App = () => { return <div>Hola React</div>; }; export default App;",
+        "categoria": "react",
+        "descripcion": "Componente funcional"
+      },
+      
+      {
+        "id": 34,
+        "texto": "SELECT * FROM usuarios WHERE edad > 18 ORDER BY nombre ASC;",
+        "categoria": "sql",
+        "descripcion": "Consulta con filtro y orden"
+      },
+      {
+        "id": 35,
+        "texto": "INSERT INTO productos (nombre, precio) VALUES ('Laptop', 1200);",
+        "categoria": "sql",
+        "descripcion": "Inserción de datos"
+      },
+      {
+        "id": 36,
+        "texto": "UPDATE empleados SET salario = salario * 1.1 WHERE departamento = 'Ventas';",
+        "categoria": "sql",
+        "descripcion": "Actualización masiva"
+      },
+      
+      {
+        "id": 37,
+        "texto": "La velocidad de la luz es aproximadamente 299.792.458 metros por segundo en el vacío.",
+        "categoria": "ciencia",
+        "descripcion": "Velocidad de la luz"
+      },
+      {
+        "id": 38,
+        "texto": "El ADN humano tiene aproximadamente 3.000 millones de pares de bases.",
+        "categoria": "ciencia",
+        "descripcion": "Genética"
+      },
+      
+      {
+        "id": 39,
+        "texto": "JavaScript se creó en solo 10 días por Brendan Eich en 1995.",
+        "categoria": "tecnologia",
+        "descripcion": "Historia de JavaScript"
+      },
+      {
+        "id": 40,
+        "texto": "El primer mensaje enviado por internet fue 'LO' en 1969.",
+        "categoria": "tecnologia",
+        "descripcion": "Historia de Internet"
+      },
+      
+      {
+        "id": 41,
+        "texto": "La Gran Barrera de Coral es la estructura viva más grande visible desde el espacio.",
+        "categoria": "naturaleza",
+        "descripcion": "Arrecifes de coral"
+      },
+      {
+        "id": 42,
+        "texto": "Las ballenas azules pueden pesar hasta 200 toneladas y medir 30 metros.",
+        "categoria": "naturaleza",
+        "descripcion": "Fauna marina"
+      },
+      
+      {
+        "id": 43,
+        "texto": "Is this the real life? Is this just fantasy? Caught in a landslide, no escape from reality. - Queen",
+        "categoria": "canciones",
+        "descripcion": "Bohemian Rhapsody"
+      },
+      {
+        "id": 44,
+        "texto": "No importa la distancia, no puedo negar tu amor. Cada día y cada noche, siempre pienso en ti. - Enrique Iglesias",
+        "categoria": "canciones",
+        "descripcion": "Héroe"
+      }
+    ],
+    
+    "dificil": [
+      {
+        "id": 45,
+        "texto": "const fibonacci = (n) => { if (n <= 1) return n; return fibonacci(n - 1) + fibonacci(n - 2); };",
+        "categoria": "codigo",
+        "descripcion": "Fibonacci recursivo"
+      },
+      {
+        "id": 46,
+        "texto": "const ordenados = productos.sort((a, b) => { if (a.precio < b.precio) return -1; if (a.precio > b.precio) return 1; return 0; });",
+        "categoria": "codigo",
+        "descripcion": "Ordenamiento personalizado"
+      },
+      {
+        "id": 47,
+        "texto": "const agrupados = productos.reduce((acc, prod) => { const cat = prod.categoria; if (!acc[cat]) acc[cat] = []; acc[cat].push(prod); return acc; }, {});",
+        "categoria": "codigo",
+        "descripcion": "Agrupación compleja"
+      },
+      {
+        "id": 48,
+        "texto": "const promesa = new Promise((resolve, reject) => { setTimeout(() => { const exito = Math.random() > 0.5; if (exito) resolve('Éxito'); else reject('Error'); }, 1000); });",
+        "categoria": "codigo",
+        "descripcion": "Creación de promesas"
+      },
+      
+      {
+        "id": 49,
+        "texto": "const handleSubmit = async (e) => { e.preventDefault(); await axios.post('/api/users', datos); };",
+        "categoria": "react",
+        "descripcion": "Manejo de formulario async"
+      },
+      {
+        "id": 50,
+        "texto": "const [usuario, setUsuario] = useState({ nombre: '', email: '' });",
+        "categoria": "react",
+        "descripcion": "useState con objeto"
+      },
+      {
+        "id": 51,
+        "texto": "const ThemeContext = createContext(); const useTheme = () => useContext(ThemeContext);",
+        "categoria": "react",
+        "descripcion": "Context API"
+      },
+      {
+        "id": 52,
+        "texto": "const inputRef = useRef(null); const focusInput = () => inputRef.current.focus();",
+        "categoria": "react",
+        "descripcion": "useRef"
+      },
+      
+      {
+        "id": 53,
+        "texto": "SELECT usuarios.nombre, COUNT(pedidos.id) FROM usuarios LEFT JOIN pedidos ON usuarios.id = pedidos.usuario_id GROUP BY usuarios.id;",
+        "categoria": "sql",
+        "descripcion": "LEFT JOIN con agregación"
+      },
+      {
+        "id": 54,
+        "texto": "CREATE TABLE usuarios (id INT PRIMARY KEY, nombre VARCHAR(100), email VARCHAR(100) UNIQUE);",
+        "categoria": "sql",
+        "descripcion": "Creación de tabla"
+      },
+      {
+        "id": 55,
+        "texto": "DELETE FROM sesiones WHERE ultima_actividad < DATE_SUB(NOW(), INTERVAL 30 DAY);",
+        "categoria": "sql",
+        "descripcion": "Eliminación con fecha"
+      },
+      
+      {
+        "id": 56,
+        "texto": "El entrelazamiento cuántico es un fenómeno donde dos partículas permanecen conectadas sin importar la distancia que las separa.",
+        "categoria": "ciencia",
+        "descripcion": "Física cuántica"
+      },
+      {
+        "id": 57,
+        "texto": "El cerebro humano tiene aproximadamente 86.000 millones de neuronas y 100 billones de conexiones sinápticas.",
+        "categoria": "ciencia",
+        "descripcion": "Neurociencia"
+      },
+      
+      {
+        "id": 58,
+        "texto": "El protocolo HTTP/3 utiliza QUIC en lugar de TCP para conexiones más rápidas y seguras.",
+        "categoria": "tecnologia",
+        "descripcion": "Protocolos web"
+      },
+      {
+        "id": 59,
+        "texto": "La primera computadora electrónica ENIAC pesaba 27 toneladas y ocupaba 167 metros cuadrados.",
+        "categoria": "tecnologia",
+        "descripcion": "Historia de la computación"
+      },
+      
+      {
+        "id": 60,
+        "texto": "El Amazonas produce aproximadamente el 20% del oxígeno del planeta y alberga el 10% de todas las especies conocidas.",
+        "categoria": "naturaleza",
+        "descripcion": "Pulmón del planeta"
+      },
+      {
+        "id": 61,
+        "texto": "El desierto del Sahara crece aproximadamente 11 kilómetros al año debido al cambio climático y la desertificación.",
+        "categoria": "naturaleza",
+        "descripcion": "Desertificación"
+      },
+      
+      {
+        "id": 62,
+        "texto": "La imaginación es más importante que el conocimiento. El conocimiento es limitado, mientras que la imaginación abarca el mundo entero. - Albert Einstein",
+        "categoria": "citas",
+        "descripcion": "Creatividad"
+      },
+      {
+        "id": 63,
+        "texto": "El éxito es aprender a ir de fracaso en fracaso sin desesperarse. - Winston Churchill",
+        "categoria": "citas",
+        "descripcion": "Perseverancia"
+      },
+      
+      {
+        "id": 64,
+        "texto": "La vida es una lenteja, o la tomas o la dejas. Yo decidí tomarla y nunca soltarla, porque sé que cada día es una nueva oportunidad. - Marc Anthony",
+        "categoria": "canciones",
+        "descripcion": "Vivir Mi Vida"
+      }
+    ],
+    
+    "experto": [
+      {
+        "id": 65,
+        "texto": "const curry = (fn) => { const arity = fn.length; return function curried(...args) { if (args.length >= arity) return fn(...args); return (...moreArgs) => curried(...args, ...moreArgs); }; };",
+        "categoria": "codigo",
+        "descripcion": "Función curry"
+      },
+      {
+        "id": 66,
+        "texto": "const deepCopy = (obj) => { if (obj === null || typeof obj !== 'object') return obj; if (obj instanceof Date) return new Date(obj); if (obj instanceof Array) return obj.map(item => deepCopy(item)); const clonedObj = {}; Object.keys(obj).forEach(key => { clonedObj[key] = deepCopy(obj[key]); }); return clonedObj; };",
+        "categoria": "codigo",
+        "descripcion": "Copia profunda recursiva"
+      },
+      {
+        "id": 67,
+        "texto": "const memoize = (fn) => { const cache = {}; return (...args) => { const key = JSON.stringify(args); if (key in cache) return cache[key]; const result = fn(...args); cache[key] = result; return result; }; };",
+        "categoria": "codigo",
+        "descripcion": "Memoización"
+      },
+      
+      {
+        "id": 68,
+        "texto": "SELECT e.nombre, d.nombre FROM empleados e INNER JOIN departamentos d ON e.departamento_id = d.id WHERE e.salario > (SELECT AVG(salario) FROM empleados WHERE departamento_id = e.departamento_id);",
+        "categoria": "sql",
+        "descripcion": "Subconsulta correlacionada"
+      },
+      
+      {
+        "id": 69,
+        "texto": "La teoría de la relatividad general de Einstein describe la gravedad como una curvatura del espacio-tiempo causada por la presencia de masa y energía.",
+        "categoria": "ciencia",
+        "descripcion": "Relatividad general"
+      },
+      
+      {
+        "id": 70,
+        "texto": "La computación cuántica utiliza qubits que pueden representar 0 y 1 simultáneamente gracias al principio de superposición, permitiendo cálculos exponencialmente más rápidos.",
+        "categoria": "tecnologia",
+        "descripcion": "Computación cuántica"
+      }
+    ]
+  },
+  "metadata": {
+    "version": "4.0",
+    "descripcion": "Pasajes organizados por las 10 categorías: general, codigo, react, sql, citas, ciencia, canciones, naturaleza, tecnologia",
+    "totales": {
+      "facil": 22,
+      "medio": 22,
+      "dificil": 20,
+      "experto": 6
+    }
+  }
+}

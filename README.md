@@ -1,0 +1,2 @@
+# VELOCIDAD-DE-TECLEO
+Aplicación interactiva para practicar velocidad de escritura. Incluye 4 niveles de dificultad, 10 categorías de pasajes (código, React, SQL, citas, ciencia, etc.), estadísticas en tiempo rea
