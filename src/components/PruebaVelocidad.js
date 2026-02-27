@@ -4,24 +4,9 @@ import confetti from 'canvas-confetti';
 
 // Importar iconos de Ant Design
 import { 
-  AiFillThunderbolt, 
-  AiFillCode, 
-  AiFillFire,
-  AiFillCheckCircle,
-  AiFillCloseCircle,
-  AiFillClockCircle,
-  AiFillTrophy,
-  AiFillStar,
-  AiFillExperiment,
-  AiFillDatabase,
-  AiFillApi,
-  AiFillRobot,
-  AiFillCrown,
-  AiFillGold,
-  AiFillBulb,
-  AiFillBook,
-  AiFillMessage,
-  AiOutlineAudio
+    AiFillThunderbolt, 
+    AiFillCode, 
+    AiFillFire
 } from 'react-icons/ai';
 
 // Importar subcomponentes
