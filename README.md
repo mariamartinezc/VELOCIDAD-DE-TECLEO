@@ -84,3 +84,15 @@ src/
 const scrollPos = window.pageYOffset;
 inputRef.current.focus({ preventScroll: true });
 window.scrollTo(0, scrollPos);
+
+---
+## Equipo
+
+| Integrante | Rol | Contribución |
+|------------|-----|--------------|
+| **Maria Martinez** | Desarrolladora | Código, lógica, diseño, despliegue |
+| **Fernando Martinez** (15 años) | QA Tester | Pruebas, detección de errores, validación de funcionalidades |
+
+> Fernando prueba cada funcionalidad de la aplicación para asegurarse de que todo funcione correctamente. Gracias a su trabajo, el proyecto tiene menos errores y mejor experiencia de usuario.
+
+---
