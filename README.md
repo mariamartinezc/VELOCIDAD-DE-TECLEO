@@ -41,6 +41,7 @@ La aplicación está desplegada en Vercel. Puedes probarla directamente desde aq
 | **Vercel** | Despliegue y hosting |
 
 ---
+## Estructura del Proyecto
 ```
 src/
 ├── components/
