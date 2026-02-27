@@ -41,21 +41,21 @@ La aplicación está desplegada en Vercel. Puedes probarla directamente desde aq
 | **Vercel** | Despliegue y hosting |
 
 ---
-## Estructura del Proyecto
+```
 src/
 ├── components/
-│ ├── PruebaVelocidad.js # Componente principal (toda la lógica)
-│ ├── SelectorDificultad.js # Botones de dificultad
-│ ├── SelectorCategoria.js # Botones de categoría
-│ ├── BotonesAccion.js # Botones "NUEVO PASAJE" y "REINICIAR"
-│ ├── CuadriculaStats.js # Estadísticas (PPM, precisión, tiempo, mejor)
-│ ├── MostrarPasaje.js # Área de texto con colores
-│ ├── Leyenda.js # Explicación de colores
-│ └── Resultado.js # Modal de resultados
-├── App.js # Renderiza el componente principal
-├── index.js # Punto de entrada
-└── index.css # Estilos globales y animaciones
----
+│   ├── PruebaVelocidad.js          # Componente principal (toda la lógica)
+│   ├── SelectorDificultad.js       # Botones de dificultad
+│   ├── SelectorCategoria.js        # Botones de categoría
+│   ├── BotonesAccion.js            # Botones "NUEVO PASAJE" y "REINICIAR"
+│   ├── CuadriculaStats.js          # Estadísticas (PPM, precisión, tiempo, mejor)
+│   ├── MostrarPasaje.js            # Área de texto con colores
+│   ├── Leyenda.js                  # Explicación de colores
+│   └── Resultado.js                # Modal de resultados
+├── App.js                           # Renderiza el componente principal
+├── index.js                         # Punto de entrada
+└── index.css                        # Estilos globales y animaciones
+```
 ---
 
 ## Cómo Jugar
