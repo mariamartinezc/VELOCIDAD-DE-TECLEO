@@ -1,18 +1,64 @@
 import React from 'react';
+import { useMediaQuery } from 'react-responsive';
 import { 
-  AiFillDashboard,     // PPM - existe como Fill
-  AiFillCheckCircle,   // PRECISIÓN - existe como Fill
-  AiFillClockCircle,   // TIEMPO - existe como Fill
-  AiFillTrophy         // MEJOR - existe como Fill
+  AiFillDashboard,
+  AiFillCheckCircle,
+  AiFillClockCircle,
+  AiFillTrophy
 } from 'react-icons/ai';
 
 function CuadriculaStats({ ppm, precision, tiempo, mejor }) {
+  // Detectar tamaño de pantalla
+  const isMobile = useMediaQuery({ maxWidth: 480 });
+  const isTablet = useMediaQuery({ minWidth: 481, maxWidth: 768 });
+  
   const stats = [
     { label: 'PPM', value: ppm, icono: AiFillDashboard, color: '#9147ff' },
     { label: 'PRECISIÓN', value: `${precision}%`, icono: AiFillCheckCircle, color: '#00ff9d' },
     { label: 'TIEMPO', value: `${tiempo}s`, icono: AiFillClockCircle, color: '#00e5ff' },
     { label: 'MEJOR', value: mejor || '—', icono: AiFillTrophy, color: '#ffb347' },
   ];
+
+  // Estilos responsive
+  const styles = {
+    grid: {
+      display: 'grid',
+      gridTemplateColumns: isMobile ? '1fr' : (isTablet ? 'repeat(2, 1fr)' : 'repeat(4, 1fr)'),
+      gap: isMobile ? '8px' : (isTablet ? '10px' : '15px'),
+      marginBottom: '30px',
+    },
+    card: {
+      background: 'rgba(18, 22, 28, 0.95)',
+      border: '2px solid #9147ff',
+      borderRadius: '15px',
+      padding: isMobile ? '12px 20px' : '20px',
+      textAlign: isMobile ? 'left' : 'center',
+      display: isMobile ? 'flex' : 'block',
+      alignItems: 'center',
+      justifyContent: 'space-between',
+      boxShadow: '0 0 20px rgba(145, 71, 255, 0.2)',
+    },
+    cardHeader: {
+      display: 'flex',
+      alignItems: 'center',
+      gap: '10px',
+      marginBottom: isMobile ? 0 : '15px',
+    },
+    icono: {
+      fontSize: isMobile ? '20px' : '24px',
+    },
+    label: {
+      fontFamily: "'Orbitron', sans-serif",
+      fontSize: isMobile ? '12px' : '14px',
+      color: '#ffffff',
+    },
+    valor: {
+      fontFamily: "'Orbitron', sans-serif",
+      fontSize: isMobile ? '24px' : '32px',
+      fontWeight: '700',
+      textShadow: '0 0 20px currentColor',
+    },
+  };
 
   return (
     <div style={styles.grid}>
@@ -31,45 +77,5 @@ function CuadriculaStats({ ppm, precision, tiempo, mejor }) {
     </div>
   );
 }
-
-const styles = {
-  grid: {
-    display: 'grid',
-    gridTemplateColumns: 'repeat(4, 1fr)',
-    gap: '15px',
-    marginBottom: '30px',
-  },
-  card: {
-    background: 'rgba(18, 22, 28, 0.95)',
-    border: '2px solid',
-    borderColor: '#9147ff',
-    borderRadius: '15px',
-    padding: '20px',
-    textAlign: 'center',
-    transition: 'all 0.3s ease',
-    boxShadow: '0 0 20px rgba(145, 71, 255, 0.2)',
-  },
-  cardHeader: {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    gap: '10px',
-    marginBottom: '15px',
-  },
-  icono: {
-    fontSize: '24px',
-  },
-  label: {
-    fontFamily: "'Orbitron', sans-serif",
-    fontSize: '14px',
-    color: '#ffffff',
-  },
-  valor: {
-    fontFamily: "'Orbitron', sans-serif",
-    fontSize: '32px',
-    fontWeight: '700',
-    textShadow: '0 0 20px currentColor',
-  },
-};
 
 export default CuadriculaStats;

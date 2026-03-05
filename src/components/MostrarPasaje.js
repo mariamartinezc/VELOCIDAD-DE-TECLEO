@@ -2,6 +2,63 @@ import React from 'react';
 import { AiFillCode } from 'react-icons/ai';
 
 function MostrarPasaje({ texto, entradaUsuario, obtenerCaracterConColor, onClick }) {
+  
+  // Función para renderizar cada carácter con su color
+  const renderizarCaracteres = () => {
+    return texto.split('').map((caracter, indice) => {
+      
+      // Caso 1: Carácter ya escrito (tiene color: verde o rojo)
+      if (indice < entradaUsuario.length) {
+        return obtenerCaracterConColor(caracter, indice);
+      }
+      
+      // Caso 2: Siguiente carácter a escribir (CURSOR SOBRE LA LETRA O ESPACIO)
+      else if (indice === entradaUsuario.length) {
+        // Si es un espacio, mostrar un rectángulo especial
+        if (caracter === ' ') {
+          return (
+            <span 
+              key={indice} 
+              style={{
+                backgroundColor: '#00e5ff',
+                display: 'inline-block',
+                width: '0.6em',        // Ancho aproximado de un espacio
+                height: '1.2em',        // Altura similar a las letras
+                animation: 'parpadeo 1s step-end infinite',
+                margin: '0 1px',
+                verticalAlign: 'middle'
+              }}
+              title="Espacio"
+            >
+              {/* Vacío - solo el rectángulo */}
+            </span>
+          );
+        } else {
+          // Si es una letra normal
+          return (
+            <span 
+              key={indice} 
+              style={{
+                backgroundColor: '#00e5ff',
+                color: '#000000',
+                padding: '0 2px',
+                animation: 'parpadeo 1s step-end infinite',
+                display: 'inline-block'
+              }}
+            >
+              {caracter}
+            </span>
+          );
+        }
+      }
+      
+      // Caso 3: Caracteres futuros (gris)
+      else {
+        return <span key={indice} style={{ color: '#aaaaaa' }}>{caracter}</span>;
+      }
+    });
+  };
+
   return (
     <div 
       style={styles.container}
@@ -12,14 +69,10 @@ function MostrarPasaje({ texto, entradaUsuario, obtenerCaracterConColor, onClick
         <span style={styles.headerText}>ESCRIBE AQUÍ</span>
         <AiFillCode style={styles.icono} />
       </div>
+      
       <div style={styles.pasajeContainer}>
         <p style={styles.pasaje}>
-          {texto.split('').map((caracter, indice) => 
-            obtenerCaracterConColor(caracter, indice)
-          )}
-          {entradaUsuario.length < texto.length && (
-            <span style={styles.cursor}>_</span>
-          )}
+          {renderizarCaracteres()}
         </p>
       </div>
       
@@ -75,13 +128,7 @@ const styles = {
     lineHeight: '1.8',
     color: '#ffffff',
     wordBreak: 'break-word',
-  },
-  cursor: {
-    backgroundColor: '#00e5ff',
-    color: '#000000',
-    animation: 'parpadeo 1s step-end infinite',
-    marginLeft: '2px',
-    padding: '0 2px',
+    margin: 0,
   },
   escrituraIndicator: {
     textAlign: 'right',
