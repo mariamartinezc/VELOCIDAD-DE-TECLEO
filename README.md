@@ -5,7 +5,7 @@ Aplicación interactiva para practicar velocidad de escritura. Incluye 4 niveles
 
 La aplicación está desplegada en Vercel. Puedes probarla directamente desde aquí:
 
-**[https://velocidad-de-tecleo-maria.vercel.app/](https://velocidad-de-tecleo-maria.vercel.app/)**
+**https://velocidad-de-tecleo-demo.vercel.app/**
 
 ¡No necesitas instalar nada! Solo haz clic y empieza a escribir.
 
